@@ -335,9 +335,23 @@
     .hero__cta .v-btn { font-size: .95rem; }
   }
 
-  /* тарифы: компактные строки + «Подробнее» */
-  .price__rows li { grid-template-columns: 1fr auto; }
-  .price__rows .more { grid-column: 1 / -1; margin-top: var(--v-2); }
+  /* тарифы: компактные карточки (как в референсе заказчика) + «Подробнее» */
+  .price { grid-template-columns: 1fr; gap: var(--v-7); }
+  .price__head { max-width: 48rem; }
+  .price__fig { display: none; }
+  .price__rows { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--v-5); align-items: start; }
+  .price__rows li, .price__rows li:last-child { display: flex; flex-direction: column; gap: var(--v-2); padding: var(--v-6) var(--v-5) var(--v-5);
+    border: 0; border-radius: var(--v-radius); background: var(--v-surface); box-shadow: var(--v-e1), var(--v-edge); }
+  .price__rows li.top { box-shadow: 0 0 0 2px var(--v-accent), var(--v-e2); }
+  .price__rows h3 { font-size: var(--v-t-lg); line-height: 1.2; }
+  .price__rows .sum, .price__rows .sum:is(*) { grid-column: auto; grid-row: auto; order: 3; text-align: left; white-space: normal; margin-top: var(--v-3); font-size: var(--v-t-2xl); line-height: 1; }
+  .price__rows .sum small { display: inline; margin-left: .5em; }
+  .price__rows .more { order: 4; margin-top: var(--v-3); }
+  .price__terms { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--v-5); margin-top: var(--v-7); }
+  .price__terms li { display: block; }
+  .price__terms b { display: block; margin-bottom: .25em; }
+  @media (max-width: 1100px) { .price__rows { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 700px) { .price__rows, .price__terms { grid-template-columns: 1fr; } }
   .price__rows .more summary { display: inline-flex; align-items: center; gap: .4em; cursor: pointer; list-style: none; font-weight: 600; font-size: var(--v-t-sm); color: var(--v-accent);
     padding: .45em 1em; border-radius: 999px; background: var(--orange-soft); min-height: 40px; }
   .price__rows .more summary::-webkit-details-marker { display: none; }
@@ -368,6 +382,8 @@
   .form .v-btn { justify-self: start; border: 0; cursor: pointer; margin-top: var(--v-2); }
   .form__note { font-size: var(--v-t-xs); color: var(--v-ink-soft); }
   .reviews__src { font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 36ch; }
+  /* закрытые «Подробнее» и вопросы: содержимое точно не занимает места (наши display: grid не должны его «проявлять») */
+  .v-page details:not([open]) > :not(summary) { display: none; }
 </style>
 </head>
 <body>
