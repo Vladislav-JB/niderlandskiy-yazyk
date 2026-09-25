@@ -339,12 +339,12 @@
   .price { grid-template-columns: 1fr; gap: var(--v-7); }
   .price__head { max-width: 48rem; }
   .price__fig { display: none; }
-  .price__rows { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--v-5); align-items: start; }
+  .price__rows { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--v-5); align-items: stretch; }
   .price__rows li, .price__rows li:last-child { display: flex; flex-direction: column; gap: var(--v-2); padding: var(--v-6) var(--v-5) var(--v-5);
     border: 0; border-radius: var(--v-radius); background: var(--v-surface); box-shadow: var(--v-e1), var(--v-edge); }
   .price__rows li.top { box-shadow: 0 0 0 2px var(--v-accent), var(--v-e2); }
   .price__rows h3 { font-size: var(--v-t-lg); line-height: 1.2; }
-  .price__rows .sum, .price__rows .sum:is(*) { grid-column: auto; grid-row: auto; order: 3; text-align: left; white-space: normal; margin-top: var(--v-3); font-size: var(--v-t-2xl); line-height: 1; }
+  .price__rows .sum, .price__rows .sum:is(*) { grid-column: auto; grid-row: auto; order: 3; text-align: left; white-space: normal; margin-top: auto; padding-top: var(--v-3); font-size: var(--v-t-2xl); line-height: 1; }
   .price__rows .sum small { display: inline; margin-left: .5em; }
   .price__rows .more { order: 4; margin-top: var(--v-3); }
   .price__terms { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--v-5); margin-top: var(--v-7); }
@@ -361,7 +361,7 @@
   .price__rows .more ul li { display: list-item; padding: 0; border: 0; }
   .price__rows .sum { font-family: var(--v-font-display); }
   .price__rows .sum .alt { display: block; margin-top: .35em; font-size: var(--v-t-sm); color: var(--v-ink); font-family: var(--v-font-text); font-weight: 600; letter-spacing: 0; }
-  .price__rows li.top h3::after { content: "самый выгодный"; margin-left: .6em; vertical-align: middle; font-family: var(--v-font-text); font-size: .72rem; font-weight: 600; letter-spacing: var(--v-track-wide); text-transform: uppercase; color: var(--v-accent-ink); background: var(--v-accent); padding: .25em .7em; border-radius: 999px; }
+  .price__rows li.top h3::after { content: "самый выгодный"; display: table; margin-top: .55em; white-space: nowrap; font-family: var(--v-font-text); font-size: .72rem; font-weight: 600; letter-spacing: var(--v-track-wide); text-transform: uppercase; color: var(--v-accent-ink); background: var(--v-accent); padding: .25em .7em; border-radius: 999px; }
 
   /* частые вопросы */
   .faq { display: grid; grid-template-columns: .8fr 1.4fr; gap: var(--v-9); align-items: start; }
