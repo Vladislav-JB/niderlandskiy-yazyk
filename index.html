@@ -20,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@1,700&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%279%27 fill=%27%23c2410c%27/%3E%3Cpath d=%27M16 25V15%27 stroke=%27%23fffaf5%27 stroke-width=%272%27/%3E%3Cpath d=%27M10 8c0 5 2.5 8 6 8s6-3 6-8l-3 2.5L16 7l-3 3.5z%27 fill=%27%23fffaf5%27/%3E%3C/svg%3E">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Knus","description":"Онлайн-школа нидерландского языка: индивидуальные занятия, пары, мини-группы, подготовка к экзаменам и собеседованию.","url":"https://vladislav-jb.github.io/niderlandskiy-yazyk","image":"https://vladislav-jb.github.io/niderlandskiy-yazyk/assets/og.jpg","telephone":"+7 (900) 000-00-00"}
@@ -384,6 +385,14 @@
   .reviews__src { font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 36ch; }
   /* закрытые «Подробнее» и вопросы: содержимое точно не занимает места (наши display: grid не должны его «проявлять») */
   .v-page details:not([open]) > :not(summary) { display: none; }
+
+  /* подпись разработчика: «Создан в «Веб-Ателье»» */
+  .foot__made { display: inline-block; white-space: nowrap; font-style: italic; font-size: var(--v-t-sm); line-height: 1.4; color: var(--v-ink-soft); padding: .4em 0; }
+  .foot__made a { display: inline; margin: 0 0 0 .3em; color: inherit; text-decoration: none; font-family: Calibri, "Carlito", sans-serif; font-weight: 700; font-style: italic; font-size: 1.12em; }
+  .foot__made a:hover { color: var(--v-ink); text-decoration: underline; text-underline-offset: .18em; }
+  .foot__made img { display: inline-block; width: 40px; height: 52px; max-width: none; margin-left: .35em; vertical-align: -7px; }
+  .foot { align-items: center; }
+  @media (max-width: 860px) { .foot__made { font-size: 1rem; } }
 </style>
 </head>
 <body>
@@ -669,7 +678,7 @@
         <footer class="foot">
           <span>Онлайн-школа нидерландского «Knus»</span>
           <span>Демо-концепт лендинга: название, контакты и отзывы условные</span>
-          <span class="foot__more">Фото: <a href="https://unsplash.com/license" target="_blank" rel="noopener">Unsplash</a></span>
+          <span class="foot__made">Создан в <a href="http://web-atelie.ru/" target="_blank" rel="noopener">«Веб-Ателье»</a><img src="assets/web-atelie.png" alt="" width="40" height="52" loading="lazy" decoding="async"></span>
         </footer>
       </div>
     </section>
